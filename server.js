@@ -2,12 +2,15 @@ const express = require('express')
 const routes = require('./routes')
 const bodyParser = require('body-parser')
 const errorhandler = require('errorhandler')
+const cors = require('cors');
 
 let store = {
   users: []
 }
 
 let app = express()
+
+app.use(cors())
 
 app.use(bodyParser.json())
 app.use(errorhandler())
