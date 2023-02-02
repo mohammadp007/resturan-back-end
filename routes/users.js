@@ -13,16 +13,10 @@ module.exports = {
         })
         res.status(201).send({"id": req.store.users.length})
     },
-    updatePost(req, res) {
-        const id = req.params.postId
-        req.store.posts[id] = req.body
-        res.status(200).send(req.store.posts[id])
-    },
     validate(req, res) {
         const id = req.params.userId;
-        const user = req.store.users[id];
         const validationCode = req.body.code;
-        if (user) {
+        if (id) {
             if (code) {
                 if (validationCode === 12345) {
                     return res.status(200).send({message: "validation successful"});
