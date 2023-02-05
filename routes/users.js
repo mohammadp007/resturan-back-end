@@ -17,7 +17,7 @@ module.exports = {
         const id = req.params.userId;
         const validationCode = req.body.code;
         if (id) {
-            if (code) {
+            if (validationCode) {
                 if (validationCode === 12345) {
                     return res.status(200).send({message: "validation successful"});
                 } else {
