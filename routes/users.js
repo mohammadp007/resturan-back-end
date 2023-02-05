@@ -18,7 +18,7 @@ module.exports = {
         const validationCode = req.body.code;
         if (id) {
             if (validationCode) {
-                if (validationCode === 12345) {
+                if (validationCode == 12345) {
                     return res.status(200).send({message: "validation successful"});
                 } else {
                     res.status(401).send({message: "Invalid code!"});
