@@ -25,6 +25,7 @@ app.post('/users', routes.users.addUser);
 app.post('/users/:userId/validate', routes.users.validate);
 
 app.get('/foods/:userId', routes.foods.getFoods);
+app.get('/foods/:userId/:id', routes.foods.getFood);
 
 
 
