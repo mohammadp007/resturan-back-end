@@ -1,5 +1,6 @@
 const foods = require('../db/foods.json');
 const singleFood = require('../db/single-food.json');
+const comments = require('../db/comments.json');
 
 module.exports = {
     getFoods(req, res) {
@@ -20,4 +21,15 @@ module.exports = {
         }
         
     },
+    
+    getComments(req, res) {
+         const id = req.params.id;
+        if (id) {
+            res.status(200).send({
+                comments
+            });
+        } else {
+            res.status(404).send({message: "Not found!"});
+        }
+    }
 }
